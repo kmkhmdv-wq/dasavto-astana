@@ -11,8 +11,8 @@
 - **No Gradients**: Strictly do not use purple, blue, or teal gradients.
 - **Grayscale Base**: Use a strict grayscale color palette (shades of gray, white) with only one accent color.
 - **Dark Neutral Background**: Use `#0A0A0E` as the primary dark neutral background.
-- **Brand Accent Color**: Use `#F47920` as the brand accent color.
-- **Buttons & CTAs**: Buttons and CTA elements must use only the accent color (`#F47920`).
+- **Brand Accent Color**: Use `#FFFFFF` as the brand accent color.
+- **Buttons & CTAs**: Buttons and CTA elements must use only the accent color (`#FFFFFF`).
 
 ## Layout & Structure
 - **Asymmetric Layout**: Use asymmetric layouts instead of mirror symmetry.
@@ -38,12 +38,12 @@
 ## Assets & Icons
 - **No Emojis or Blobs**: Do not use emoji icons, Lucide default icon packages, or background/decorative gradient blobs behind icons.
 - **Icon Limits**: Maximum of 3 icons per section.
-- **Custom SVGs**: Use custom SVG paths with `stroke-width="1.5"` and the brand accent color (`#F47920`) only.
+- **Custom SVGs**: Use custom SVG paths with `stroke-width="1.5"` and the brand accent color (`#FFFFFF`) only.
 
 ## Visual Hierarchy & Testing
 - **Dominant Element**: Exactly one dominant element per section (must be the largest, brightest, and contain the only filled CTA button).
 - **Subordinate Elements**: All other items must be visually quieter.
-- **Accent**: Use the single brand accent color (`#F47920`) exclusively for these actions.
+- **Accent**: Use the single brand accent color (`#FFFFFF`) exclusively for these actions.
 - **Squint Test**: All designs must pass the squint test: the primary action must remain clearly visible when the page is blurred.
 
 ## Credentials & Deployment

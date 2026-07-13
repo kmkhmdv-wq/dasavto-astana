@@ -5,8 +5,8 @@
   --bg-primary: #0A0A0E;
   --bg-secondary: #121217;
   --bg-secondary-hover: #171720;
-  --accent-brand: #F47920;
-  --accent-hover: #FF8D3C;
+  --accent-brand: #FFFFFF;
+  --accent-hover: #E5E5E5;
   --text-primary: #FFFFFF;
   --text-muted: rgba(255, 255, 255, 0.6);
   --text-dim: rgba(255, 255, 255, 0.35);
@@ -200,13 +200,13 @@ a {
 .btn-primary {
   background-color: var(--accent-brand);
   color: var(--bg-primary); /* Dark text on bright accent button */
-  box-shadow: 0 4px 20px rgba(244, 121, 32, 0.2);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
 }
 
 .btn-primary:hover {
   background-color: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(244, 121, 32, 0.35);
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.15);
 }
 
 .btn-secondary {
@@ -302,7 +302,7 @@ a {
 .card-featured {
   grid-column: span 3;
   grid-row: span 2;
-  border-color: rgba(244, 121, 32, 0.25);
+  border-color: rgba(255, 255, 255, 0.12);
   position: relative;
 }
 
@@ -364,8 +364,8 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 4px 8px;
-  background-color: rgba(254, 121, 32, 0.1);
-  color: var(--accent-brand);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
   border-radius: 4px;
   align-self: flex-start;
   margin-bottom: 12px;
