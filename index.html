@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAS AVTO.KZ — Автосалон в Астане | Новые и б/у авто в рассрочку и кредит</title>
+  <meta name="description" content="Автосалон DAS AVTO.KZ в Астане. Продажа новых и подержанных автомобилей. Автокредит без первоначального взноса и с любой кредитной историей, Trade-in, комиссионная продажа на крытом паркинге.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        DAS AVTO<span>.KZ</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#services" class="nav-link">Услуги</a>
+        <a href="#showcase" class="nav-link">Автопарк</a>
+        <a href="#trust" class="nav-link">О нас</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="tel:+77769999283" class="phone-link">+7 (776) 999-92-83</a>
+        <button class="btn btn-secondary" onclick="openModal('callback')">Заказать звонок</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section (Asymmetric 1.2fr / 1.5fr Grid) -->
+  <section class="section mt-medium">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="inner-group">
+          <span class="text-label">Автосалон в Астане</span>
+          <h1 class="text-h1">DAS AVTO</h1>
+        </div>
+        <p class="text-subtitle">Новые и авто с пробегом на выгодных условиях</p>
+        <p class="text-body">Приобретайте автомобили без первоначального взноса и с любой кредитной историей. Быстрая оценка и безопасное оформление в день обращения.</p>
+        <div>
+          <!-- Visual Dominance: The only filled accent CTA button in the hero area -->
+          <button class="btn btn-primary" onclick="openModal('credit')">Подобрать авто</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-val">4k+</span>
+            <span class="text-label">Клиентов</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">900+</span>
+            <span class="text-label">Автомобилей</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">24/7</span>
+            <span class="text-label">Охрана</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="assets/hero_showcase.png" alt="DAS AVTO Showroom Showcase">
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section (Asymmetric Bento Grid) -->
+  <section id="services" class="section mt-large">
+    <div class="inner-group" style="margin-bottom: 32px;">
+      <span class="text-label">Наши услуги</span>
+      <h2 class="text-subtitle">Комплексные авторешения</h2>
+    </div>
+    
+    <div class="grid-services">
+      <!-- 1. Featured Card (Dominates: 3 cols, 2 rows) -->
+      <div class="card card-featured">
+        <div class="inner-card-content" style="display: flex; flex-direction: column; gap: 16px; height: 100%;">
+          <span class="card-tag">Популярно</span>
+          <div class="card-icon" style="color: var(--accent-brand);">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+              <line x1="1" y1="10" x2="23" y2="10"></line>
+            </svg>
+          </div>
+          <div class="inner-group">
+            <h3 class="card-title">Автокредитование и рассрочка</h3>
+            <p class="card-text">Оформление автокредита на новые авто и автомобили с пробегом без первоначального взноса и с любой кредитной историей. Возможность рассрочки без переплат.</p>
+          </div>
+          <ul style="list-style: none; font-size: 13px; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px; margin-top: auto; padding-bottom: 16px;">
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 4px; height: 4px; background-color: var(--accent-brand); border-radius: 50%;"></span>
+              Без первоначального взноса
+            </li>
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 4px; height: 4px; background-color: var(--accent-brand); border-radius: 50%;"></span>
+              С любой кредитной историей
+            </li>
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 4px; height: 4px; background-color: var(--accent-brand); border-radius: 50%;"></span>
+              Одобрение банками-партнерами за 15 минут
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <span class="text-label">Одобрение 15 мин</span>
+          <a href="#" class="card-link" onclick="openModal('credit'); return false;">Подать заявку</a>
+        </div>
+      </div>
+
+      <!-- 2. Trade-in Card (3 cols, 1 row) -->
+      <div class="card card-medium-1">
+        <div class="inner-card-content">
+          <div class="card-icon" style="color: var(--accent-brand);">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 3 21 3 21 8"></polyline>
+              <line x1="4" y1="20" x2="21" y2="3"></line>
+              <polyline points="8 21 3 21 3 16"></polyline>
+              <line x1="3" y1="21" x2="20" y2="4"></line>
+            </svg>
+          </div>
+          <h3 class="card-title">Trade-in (Обмен авто)</h3>
+          <p class="card-text">Обменяйте свой автомобиль на новый или б/у авто из нашего автосалона. Разница выплачивается наличными или оформляется в кредит.</p>
+        </div>
+        <div class="card-footer">
+          <span class="text-label">Оценка за 30 мин</span>
+          <a href="#" class="card-link" onclick="openModal('tradein'); return false;">Оценить обмен</a>
+        </div>
+      </div>
+
+      <!-- 3. Commission Card (2 cols, 1 row) -->
+      <div class="card card-medium-2">
+        <div class="inner-card-content">
+          <div class="card-icon" style="color: var(--accent-brand);">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3 class="card-title">Прием на комиссию</h3>
+          <p class="card-text">Продадим ваш автомобиль быстро и безопасно. Бесплатное хранение на крытом охраняемом паркинге.</p>
+        </div>
+        <div class="card-footer">
+          <span class="text-label">Крытый паркинг</span>
+          <a href="#" class="card-link" onclick="openModal('commission'); return false;">Сдать авто</a>
+        </div>
+      </div>
+
+      <!-- 4. Wykup Card (2 cols, 1 row) -->
+      <div class="card card-small-1">
+        <div class="inner-card-content">
+          <div class="card-icon" style="color: var(--accent-brand);">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3 class="card-title">Срочный выкуп</h3>
+          <p class="card-text">Выкупим ваш автомобиль любой марки в день обращения по цене до 90% от рыночной. Расчет за 1 час.</p>
+        </div>
+        <div class="card-footer">
+          <span class="text-label">Выплата за 1 час</span>
+          <a href="#" class="card-link" onclick="openModal('wykup'); return false;">Получить расчет</a>
+        </div>
+      </div>
+
+      <!-- 5. Order Card (2 cols, 1 row) -->
+      <div class="card card-small-2">
+        <div class="inner-card-content">
+          <div class="card-icon" style="color: var(--accent-brand);">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <h3 class="card-title">Заказ авто</h3>
+          <p class="card-text">Подберем и доставим интересующий вас автомобиль по индивидуальным характеристикам.</p>
+        </div>
+        <div class="card-footer">
+          <span class="text-label">Индивидуальный заказ</span>
+          <a href="#" class="card-link" onclick="openModal('order'); return false;">Оформить заказ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vehicle Showcase Section -->
+  <section id="showcase" class="section mt-large">
+    <div class="showcase-header">
+      <div class="inner-group">
+        <span class="text-label">Актуальный автопарк</span>
+        <h2 class="text-subtitle">Автомобили в наличии</h2>
+      </div>
+      <div class="tabs">
+        <div class="tab active" onclick="switchTab('used')">С пробегом</div>
+        <div class="tab" onclick="switchTab('new')">Новые</div>
+      </div>
+    </div>
+
+    <!-- Used Cars Grid -->
+    <div id="used-cars" class="grid-cars mt-medium">
+      <div class="car-card">
+        <div class="car-img-wrapper">
+          <img src="assets/car_porsche.png" alt="Porsche 911">
+          <span class="car-badge">В наличии</span>
+        </div>
+        <div class="car-details">
+          <h3 style="font-size: 18px; font-weight: 700;">Porsche 911 Carrera</h3>
+          <div class="car-specs">
+            <div class="spec-info">Год <span>2022</span></div>
+            <div class="spec-info">Пробег <span>12 000 км</span></div>
+            <div class="spec-info">Двигатель <span>3.0 л</span></div>
+          </div>
+          <div class="car-price-row">
+            <span class="car-price">68 500 000 ₸</span>
+            <span class="car-installment">от 380 000 ₸/мес</span>
+          </div>
+          <button class="btn btn-secondary" style="width: 100%; margin-top: 8px;" onclick="openModal('credit', 'Porsche 911 Carrera')">Рассчитать кредит</button>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <div class="car-img-wrapper">
+          <img src="assets/car_suv.png" alt="Range Rover SUV">
+          <span class="car-badge">В наличии</span>
+        </div>
+        <div class="car-details">
+          <h3 style="font-size: 18px; font-weight: 700;">Land Rover Range Rover</h3>
+          <div class="car-specs">
+            <div class="spec-info">Год <span>2023</span></div>
+            <div class="spec-info">Пробег <span>8 500 км</span></div>
+            <div class="spec-info">Двигатель <span>3.0 л (Д)</span></div>
+          </div>
+          <div class="car-price-row">
+            <span class="car-price">79 000 000 ₸</span>
+            <span class="car-installment">от 440 000 ₸/мес</span>
+          </div>
+          <button class="btn btn-secondary" style="width: 100%; margin-top: 8px;" onclick="openModal('credit', 'Range Rover')">Рассчитать кредит</button>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <div class="car-img-wrapper">
+          <img src="assets/car_sedan.png" alt="Polestar Electric Sedan">
+          <span class="car-badge">В наличии</span>
+        </div>
+        <div class="car-details">
+          <h3 style="font-size: 18px; font-weight: 700;">Polestar 2 EV</h3>
+          <div class="car-specs">
+            <div class="spec-info">Год <span>2022</span></div>
+            <div class="spec-info">Пробег <span>19 000 км</span></div>
+            <div class="spec-info">Привод <span>Электро</span></div>
+          </div>
+          <div class="car-price-row">
+            <span class="car-price">22 800 000 ₸</span>
+            <span class="car-installment">от 125 000 ₸/мес</span>
+          </div>
+          <button class="btn btn-secondary" style="width: 100%; margin-top: 8px;" onclick="openModal('credit', 'Polestar 2')">Рассчитать кредит</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- New Cars Grid (Hidden by default) -->
+    <div id="new-cars" class="grid-cars mt-medium" style="display: none;">
+      <div class="car-card">
+        <div class="car-img-wrapper">
+          <img src="assets/car_sedan.png" alt="New Electric Sedan">
+          <span class="car-badge">Под заказ</span>
+        </div>
+        <div class="car-details">
+          <h3 style="font-size: 18px; font-weight: 700;">Polestar 3 Performance</h3>
+          <div class="car-specs">
+            <div class="spec-info">Год <span>2026</span></div>
+            <div class="spec-info">Пробег <span>0 км</span></div>
+            <div class="spec-info">Привод <span>Электро</span></div>
+          </div>
+          <div class="car-price-row">
+            <span class="car-price">34 500 000 ₸</span>
+            <span class="car-installment">от 190 000 ₸/мес</span>
+          </div>
+          <button class="btn btn-secondary" style="width: 100%; margin-top: 8px;" onclick="openModal('order', 'Polestar 3')">Заказать авто</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust, Reviews & Contact Form Section -->
+  <section id="trust" class="section mt-large">
+    <div class="trust-grid">
+      <!-- Left side: Reviews and trust -->
+      <div class="reviews-container">
+        <div class="inner-group">
+          <span class="text-label">Отзывы клиентов</span>
+          <h2 class="text-subtitle">Нам доверяют</h2>
+        </div>
+        <p class="text-body" style="font-size: 16px;">Мы гордимся тем, что предоставляем прозрачные условия сделок и качественный сервис. Читайте отзывы реальных людей, обратившихся в наш салон.</p>
+        
+        <div class="review-card">
+          <div class="review-header">
+            <span class="reviewer-name">Айбек К.</span>
+            <span class="review-source">2ГИС</span>
+          </div>
+          <p class="review-text">Обратился по Trade-in, менеджер Дастан провел быструю оценку моей старой машины по честной рыночной цене. Разницу оформили в кредит без первоначального взноса. Все сделали за один день, отличный сервис.</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <span class="reviewer-name">Мадина А.</span>
+            <span class="review-source">2ГИС</span>
+          </div>
+          <p class="review-text">Оставляла свою машину на комиссию. Она простояла на их крытом паркинге около недели и быстро продалась. Очень довольна безопасностью сделки и профессионализмом сотрудников.</p>
+        </div>
+      </div>
+
+      <!-- Right side: CTA Form -->
+      <div class="cta-form-wrapper">
+        <div class="inner-group">
+          <span class="text-label">Подать заявку</span>
+          <h3 class="text-subtitle" style="font-size: 24px;">Рассчитать условия</h3>
+        </div>
+        <p style="font-size: 14px; color: var(--text-muted);">Заполните форму, и кредитный специалист свяжется с вами для расчета доступного лимита по рассрочке или кредиту.</p>
+        <form onsubmit="handleFormSubmit(event)">
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div class="form-group">
+              <label class="form-label">Ваше имя</label>
+              <input type="text" class="form-input" placeholder="Иван" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Номер телефона</label>
+              <input type="tel" class="form-input" placeholder="+7 (700) 000-00-00" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Интересующая модель / услуга</label>
+              <input type="text" class="form-input" placeholder="Например: Porsche 911 / Trade-in">
+            </div>
+            <!-- Squint Test: Only filled CTA button here, bright brand accent -->
+            <button type="submit" class="btn btn-primary" style="margin-top: 8px;">Отправить запрос</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer mt-large">
+    <div class="section">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <a href="#" class="logo">
+            DAS AVTO<span>.KZ</span>
+          </a>
+          <p style="font-size: 14px; color: var(--text-muted);">Продажа новых и б/у автомобилей в Астане. Trade-in, автокредитование без первоначального взноса, срочный выкуп и комиссионная продажа на крытом паркинге.</p>
+        </div>
+        <div class="footer-links-col">
+          <span class="footer-links-title">Контакты</span>
+          <p class="footer-link">Телефон: +7 (776) 999-92-83</p>
+          <p class="footer-link">WhatsApp: wa.me/77769999283</p>
+          <p class="footer-link">Адрес: г. Астана, ул. Нургиса Тлендиева, 52/3 (ЖК Ак Тилек)</p>
+        </div>
+        <div class="footer-links-col">
+          <span class="footer-links-title">Режим работы</span>
+          <p class="footer-link">Будние дни: 09:00 - 20:00</p>
+          <p class="footer-link">Выходные дни: 10:00 - 20:00</p>
+          <p class="footer-link">Ежедневно, без перерывов</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ТОО &quot;DAS AVTO.KZ&quot; (БИН 250740005105). Все права защищены.</span>
+        <span>Дизайн выполнен по стандартам премиум-минимализма.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Overlay Structure -->
+  <div id="modal" class="modal-overlay" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="var(--text-muted)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="inner-group" style="margin-bottom: 20px;">
+        <span class="text-label" id="modal-label">Заявка</span>
+        <h3 class="text-subtitle" id="modal-title" style="font-size: 24px;">Рассчитать условия</h3>
+      </div>
+      <form onsubmit="handleModalSubmit(event)">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="form-group">
+            <label class="form-label">Ваше имя</label>
+            <input type="text" class="form-input" placeholder="Иван" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Телефон</label>
+            <input type="tel" class="form-input" placeholder="+7 (700) 000-00-00" required>
+          </div>
+          <div class="form-group" id="modal-extra-field" style="display: none;">
+            <label class="form-label" id="modal-extra-label">Дополнительно</label>
+            <input type="text" class="form-input" id="modal-extra-input">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">Отправить заявку</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
