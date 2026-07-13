@@ -126,7 +126,7 @@
       </div>
 
       <!-- 3. Commission Card (2 cols, 1 row) -->
-      <div class="card card-medium-2">
+      <div class="card card-small-1">
         <div class="inner-card-content">
           <div class="card-icon" style="color: var(--accent-brand);">
             <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -142,41 +142,30 @@
         </div>
       </div>
 
-      <!-- 4. Wykup Card (2 cols, 1 row) -->
-      <div class="card card-small-1">
+      <!-- 4. Wykup Card (1 col, 1 row) -->
+      <div class="card card-small-2">
         <div class="inner-card-content">
-          <div class="card-icon" style="color: var(--accent-brand);">
-            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="12" y1="1" x2="12" y2="23"></line>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
-          </div>
+          <!-- Icon removed for design-system compliance: Max 3 icons per section -->
           <h3 class="card-title">Срочный выкуп</h3>
-          <p class="card-text">Выкупим ваш автомобиль любой марки в день обращения по цене до 90% от рыночной. Расчет за 1 час.</p>
+          <p class="card-text">Выкупим по цене до 90% от рыночной. Расчет за 1 час.</p>
         </div>
         <div class="card-footer">
-          <span class="text-label">Выплата за 1 час</span>
-          <a href="#" class="card-link" onclick="openModal('wykup'); return false;">Получить расчет</a>
+          <span class="text-label">Быстрый расчет</span>
+          <a href="#" class="card-link" onclick="openModal('wykup'); return false;">Выкуп</a>
         </div>
       </div>
 
-      <!-- 5. Order Card (2 cols, 1 row) -->
-      <div class="card card-small-2">
-        <div class="inner-card-content">
-          <div class="card-icon" style="color: var(--accent-brand);">
-            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="1" y="3" width="15" height="13"></rect>
-              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-              <circle cx="5.5" cy="18.5" r="2.5"></circle>
-              <circle cx="18.5" cy="18.5" r="2.5"></circle>
-            </svg>
-          </div>
-          <h3 class="card-title">Заказ авто</h3>
-          <p class="card-text">Подберем и доставим интересующий вас автомобиль по индивидуальным характеристикам.</p>
+      <!-- 5. Order Card (Full Width: 6 cols, 1 row) -->
+      <div class="card card-full-width">
+        <div class="inner-card-content" style="display: flex; flex-direction: column; gap: 12px;">
+          <!-- Icon removed for design-system compliance: Max 3 icons per section -->
+          <span class="card-tag" style="background-color: rgba(255, 255, 255, 0.05); color: var(--text-primary);">Индивидуально</span>
+          <h3 class="card-title">Автоподбор и заказ</h3>
+          <p class="card-text">Подберем, проверим и доставим интересующий вас автомобиль по вашим индивидуальным критериям из любой точки мира. Полное юридическое сопровождение сделки и проверка технического состояния.</p>
         </div>
         <div class="card-footer">
-          <span class="text-label">Индивидуальный заказ</span>
-          <a href="#" class="card-link" onclick="openModal('order'); return false;">Оформить заказ</a>
+          <span class="text-label">Доставка и гарантия</span>
+          <a href="#" class="card-link" onclick="openModal('order'); return false;">Оформить подбор</a>
         </div>
       </div>
     </div>
