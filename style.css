@@ -368,11 +368,13 @@ a {
   border-color: var(--accent-brand);
 }
 
-.instagram-link-header:hover {
+.instagram-link-header:hover,
+.tiktok-link-header:hover {
   color: var(--text-primary) !important;
 }
 
-.mobile-instagram-link:hover {
+.mobile-instagram-link:hover,
+.mobile-tiktok-link:hover {
   color: var(--text-muted) !important;
 }
 
