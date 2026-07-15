@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DAS AVTO.KZ — Автосалон в Астане | Новые и б/у авто в рассрочку и кредит</title>
   <meta name="description" content="Автосалон DAS AVTO.KZ в Астане. Продажа новых и подержанных автомобилей. Автокредит без первоначального взноса и с любой кредитной историей, Trade-in, комиссионная продажа на крытом паркинге.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -23,6 +23,24 @@
       <div class="nav-actions">
         <a href="tel:+77769999283" class="phone-link">+7 (776) 999-92-83</a>
         <button class="btn btn-secondary" onclick="openModal('callback')">Заказать звонок</button>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <line class="line-1" x1="4" y1="8" x2="20" y2="8"></line>
+          <line class="line-2" x1="4" y1="16" x2="16" y2="16"></line>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+      <nav class="mobile-nav-links">
+        <a href="#services" class="mobile-nav-link" onclick="closeMobileMenu()">Услуги</a>
+        <a href="#showcase" class="mobile-nav-link" onclick="closeMobileMenu()">Автопарк</a>
+        <a href="#trust" class="mobile-nav-link" onclick="closeMobileMenu()">О нас</a>
+      </nav>
+      <div class="mobile-nav-actions">
+        <a href="tel:+77769999283" class="mobile-phone-link">+7 (776) 999-92-83</a>
+        <button class="btn btn-secondary" style="width: 100%;" onclick="closeMobileMenu(); openModal('callback')">Заказать звонок</button>
       </div>
     </div>
   </header>

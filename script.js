@@ -124,3 +124,21 @@ function handleModalSubmit(event) {
     closeModal();
   }, 1000);
 }
+
+// Mobile Menu Navigation Control
+function toggleMobileMenu() {
+  const header = document.querySelector('.header');
+  header.classList.toggle('menu-active');
+
+  if (header.classList.contains('menu-active')) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+}
+
+function closeMobileMenu() {
+  const header = document.querySelector('.header');
+  header.classList.remove('menu-active');
+  document.body.style.overflow = '';
+}
