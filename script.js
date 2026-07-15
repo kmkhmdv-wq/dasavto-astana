@@ -142,3 +142,112 @@ function closeMobileMenu() {
   header.classList.remove('menu-active');
   document.body.style.overflow = '';
 }
+
+// Reviews Carousel Manual Scroll & Autoplay Control
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.reviews-carousel-wrapper');
+  const track = document.querySelector('.reviews-carousel-track');
+  const prevBtn = document.getElementById('review-prev-btn');
+  const nextBtn = document.getElementById('review-next-btn');
+  
+  if (!slider || !prevBtn || !nextBtn) return;
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  let autoplayTimer = null;
+
+  // Function to calculate dynamic card width including gap
+  const getScrollStep = () => {
+    const card = slider.querySelector('.review-card-carousel');
+    if (!card) return 374;
+    const gap = track ? parseInt(window.getComputedStyle(track).gap) || 24 : 24;
+    return card.offsetWidth + gap;
+  };
+
+  // Autoplay function
+  const startAutoplay = () => {
+    stopAutoplay();
+    autoplayTimer = setInterval(() => {
+      const step = getScrollStep();
+      const maxScroll = slider.scrollWidth - slider.clientWidth;
+      if (slider.scrollLeft >= maxScroll - 10) {
+        // Return to start smoothly
+        slider.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        slider.scrollBy({ left: step, behavior: 'smooth' });
+      }
+    }, 5000);
+  };
+
+  const stopAutoplay = () => {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  };
+
+  // Button clicks
+  prevBtn.addEventListener('click', () => {
+    stopAutoplay();
+    slider.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    stopAutoplay();
+    slider.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+  });
+
+  // Mouse Drag-to-Scroll implementation
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active-drag');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    slider.style.scrollBehavior = 'auto';
+    slider.style.scrollSnapType = 'none';
+    stopAutoplay();
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    if (!isDown) return;
+    isDown = false;
+    slider.classList.remove('active-drag');
+    slider.style.scrollBehavior = 'smooth';
+    slider.style.scrollSnapType = 'x mandatory';
+    startAutoplay();
+  });
+
+  slider.addEventListener('mouseup', () => {
+    if (!isDown) return;
+    isDown = false;
+    slider.classList.remove('active-drag');
+    slider.style.scrollBehavior = 'smooth';
+    slider.style.scrollSnapType = 'x mandatory';
+    startAutoplay();
+  });
+
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.5; // Drag sensitivity multiplier
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  // Touch device support updates to pause/resume autoplay
+  slider.addEventListener('touchstart', stopAutoplay, { passive: true });
+  slider.addEventListener('touchend', startAutoplay, { passive: true });
+
+  // Pause on hover
+  slider.addEventListener('mouseenter', stopAutoplay);
+  slider.addEventListener('mouseleave', () => {
+    if (!isDown) {
+      startAutoplay();
+    }
+  });
+
+  // Initial start of autoplay
+  startAutoplay();
+});
+
