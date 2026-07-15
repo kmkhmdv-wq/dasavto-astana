@@ -1131,3 +1131,117 @@ a {
     padding: 24px 16px;
   }
 }
+
+/* Google Maps & Location Container */
+.location-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.map-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  line-height: 0;
+}
+
+.map-container iframe {
+  display: block;
+  filter: grayscale(1) invert(0.9) contrast(1.2);
+  transition: filter var(--transition-normal);
+}
+
+.map-container:hover iframe {
+  filter: grayscale(0.5) invert(0.9) contrast(1.2);
+}
+
+/* Reviews Carousel Styling */
+.reviews-carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  /* Smooth gradient fade at the edges */
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  padding: 12px 0;
+}
+
+.reviews-carousel-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: scrollRight 45s linear infinite;
+}
+
+.reviews-carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.review-card-carousel {
+  flex: 0 0 350px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all var(--transition-normal);
+}
+
+.review-card-carousel:hover {
+  border-color: var(--border-hover);
+  background-color: var(--bg-secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.02);
+}
+
+.reviewer-name-carousel {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.review-stars {
+  color: var(--text-primary);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-text-carousel {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Adjustments for mobile viewports */
+@media (max-width: 600px) {
+  .review-card-carousel {
+    flex: 0 0 280px;
+    padding: 16px;
+  }
+  .reviews-carousel-track {
+    gap: 16px;
+  }
+}
+
