@@ -79,6 +79,11 @@ function openModal(type, extraInfo = '') {
       break;
   }
 
+  const form = modal.querySelector('form');
+  if (form) {
+    form.dataset.type = type;
+  }
+
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -89,25 +94,34 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-// Form Submission Simulation
-function handleFormSubmit(event) {
-  event.preventDefault();
-  const form = event.target;
-  const submitBtn = form.querySelector('button[type="submit"]');
-  const originalText = submitBtn.innerText;
+// Supabase configuration
+const SUPABASE_URL = 'https://fmjhmvxkwcwusxmrewhi.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtamhtdnhrd2N3dXN4bXJld2hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ1NTkzNTEsImV4cCI6MjEwMDEzNTM1MX0.Kc6qJxbnriOLnHorkWbz78cml9tXA6O1sCDpI5d6pk0';
 
-  submitBtn.innerText = 'Отправка...';
-  submitBtn.disabled = true;
-
-  setTimeout(() => {
-    alert('Спасибо! Ваша заявка успешно принята. Кредитный специалист автосалона DAS AVTO.KZ свяжется с вами в течение 10 минут.');
-    form.reset();
-    submitBtn.innerText = originalText;
-    submitBtn.disabled = false;
-  }, 1000);
+// Helper function to submit data to Supabase applications table
+async function submitToSupabase(name, phone, extra, type) {
+  try {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/applications`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ name, phone, extra, type })
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+  } catch (error) {
+    console.error('Error submitting form to Supabase:', error);
+  }
 }
 
-function handleModalSubmit(event) {
+// Form Submission (Calculator Form)
+async function handleFormSubmit(event) {
   event.preventDefault();
   const form = event.target;
   const submitBtn = form.querySelector('button[type="submit"]');
@@ -116,13 +130,45 @@ function handleModalSubmit(event) {
   submitBtn.innerText = 'Отправка...';
   submitBtn.disabled = true;
 
-  setTimeout(() => {
-    alert('Заявка отправлена! Менеджер автосалона свяжется с вами в ближайшее время.');
-    form.reset();
-    submitBtn.innerText = originalText;
-    submitBtn.disabled = false;
-    closeModal();
-  }, 1000);
+  const inputs = form.querySelectorAll('.form-input');
+  const name = inputs[0] ? inputs[0].value : '';
+  const phone = inputs[1] ? inputs[1].value : '';
+  const extra = inputs[2] ? inputs[2].value : '';
+
+  await submitToSupabase(name, phone, extra, 'calculate_conditions');
+
+  alert('Спасибо! Ваша заявка успешно принята. Кредитный специалист автосалона DAS AVTO.KZ свяжется с вами в течение 10 минут.');
+  form.reset();
+  submitBtn.innerText = originalText;
+  submitBtn.disabled = false;
+}
+
+// Modal Form Submission
+async function handleModalSubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalText = submitBtn.innerText;
+
+  submitBtn.innerText = 'Отправка...';
+  submitBtn.disabled = true;
+
+  const nameInput = form.querySelector('input[placeholder="Иван"]');
+  const phoneInput = form.querySelector('input[placeholder="+7 (700) 000-00-00"]');
+  const extraInput = document.getElementById('modal-extra-input');
+  
+  const name = nameInput ? nameInput.value : '';
+  const phone = phoneInput ? phoneInput.value : '';
+  const extra = extraInput && (extraInput.required || extraInput.value) ? extraInput.value : '';
+  const type = form.dataset.type || 'callback';
+
+  await submitToSupabase(name, phone, extra, type);
+
+  alert('Заявка отправлена! Менеджер автосалона свяжется с вами в ближайшее время.');
+  form.reset();
+  submitBtn.innerText = originalText;
+  submitBtn.disabled = false;
+  closeModal();
 }
 
 // Mobile Menu Navigation Control
