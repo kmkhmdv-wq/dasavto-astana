@@ -12,6 +12,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DAS AVTO.KZ — Автосалон в Астане | Новые и б/у авто в рассрочку и кредит</title>
   <meta name="description" content="Автосалон DAS AVTO.KZ в Астане. Продажа новых и подержанных автомобилей. Автокредит без первоначального взноса и с любой кредитной историей, Trade-in, комиссионная продажа на крытом паркинге.">
+  <link rel="canonical" href="https://car-bay-three.vercel.app/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://car-bay-three.vercel.app/">
+  <meta property="og:title" content="DAS AVTO.KZ — Автосалон в Астане | Новые и б/у авто в рассрочку и кредит">
+  <meta property="og:description" content="Автосалон DAS AVTO.KZ в Астане. Продажа новых и подержанных автомобилей. Автокредит без первоначального взноса и с любой кредитной историей, Trade-in, комиссионная продажа на крытом паркинге.">
+  <meta property="og:image" content="https://car-bay-three.vercel.app/assets/das_avto_logo.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="DAS AVTO.KZ">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://car-bay-three.vercel.app/">
+  <meta name="twitter:title" content="DAS AVTO.KZ — Автосалон в Астане | Новые и б/у авто в рассрочку и кредит">
+  <meta name="twitter:description" content="Автосалон DAS AVTO.KZ в Астане. Продажа новых и подержанных автомобилей. Автокредит без первоначального взноса и с любой кредитной историей, Trade-in, комиссионная продажа на крытом паркинге.">
+  <meta name="twitter:image" content="https://car-bay-three.vercel.app/assets/das_avto_logo.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://car-bay-three.vercel.app/#organization",
+        "name": "DAS AVTO.KZ",
+        "url": "https://car-bay-three.vercel.app/",
+        "logo": "https://car-bay-three.vercel.app/assets/das_avto_logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+7-776-999-92-83",
+          "contactType": "sales",
+          "areaServed": "KZ",
+          "availableLanguage": "Russian"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://car-bay-three.vercel.app/#website",
+        "url": "https://car-bay-three.vercel.app/",
+        "name": "DAS AVTO.KZ",
+        "description": "Автосалон DAS AVTO.KZ в Астане. Продажа новых и подержанных автомобилей. Автокредит и рассрочка.",
+        "publisher": {
+          "@id": "https://car-bay-three.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "AutoDealer",
+        "@id": "https://car-bay-three.vercel.app/#localbusiness",
+        "name": "DAS AVTO.KZ",
+        "url": "https://car-bay-three.vercel.app/",
+        "logo": "https://car-bay-three.vercel.app/assets/das_avto_logo.png",
+        "image": "https://car-bay-three.vercel.app/assets/das_avto_logo.png",
+        "telephone": "+7-776-999-92-83",
+        "priceRange": "$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Астана, Казахстан",
+          "addressLocality": "Астана",
+          "addressCountry": "KZ"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 51.195164,
+          "longitude": 71.323344
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "20:00"
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Астана"
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="style.css?v=2">
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -298,7 +387,7 @@
     <div id="used-cars" class="grid-cars mt-medium">
       <div class="car-card">
         <div class="car-img-wrapper">
-          <img src="assets/car_porsche.png" alt="Porsche 911">
+          <img src="assets/car_porsche.png" alt="Porsche 911" loading="lazy">
           <span class="car-badge">В наличии</span>
         </div>
         <div class="car-details">
@@ -318,7 +407,7 @@
 
       <div class="car-card">
         <div class="car-img-wrapper">
-          <img src="assets/car_suv.png" alt="Range Rover SUV">
+          <img src="assets/car_suv.png" alt="Range Rover SUV" loading="lazy">
           <span class="car-badge">В наличии</span>
         </div>
         <div class="car-details">
@@ -338,7 +427,7 @@
 
       <div class="car-card">
         <div class="car-img-wrapper">
-          <img src="assets/car_sedan.png" alt="Polestar Electric Sedan">
+          <img src="assets/car_sedan.png" alt="Polestar Electric Sedan" loading="lazy">
           <span class="car-badge">В наличии</span>
         </div>
         <div class="car-details">
@@ -361,7 +450,7 @@
     <div id="new-cars" class="grid-cars mt-medium" style="display: none;">
       <div class="car-card">
         <div class="car-img-wrapper">
-          <img src="assets/car_sedan.png" alt="New Electric Sedan">
+          <img src="assets/car_sedan.png" alt="New Electric Sedan" loading="lazy">
           <span class="car-badge">Под заказ</span>
         </div>
         <div class="car-details">
